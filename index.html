@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- viewport-fit=cover จำเป็นสำหรับ safe-area บน iPhone ที่มีรอยบาก -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <!-- ไม่มี media เพราะ AppearanceProvider เขียนค่านี้ตามโหมดที่ผู้ใช้เลือกเอง
+         ไม่ใช่ตามโหมดของเครื่องเสมอไป -->
+    <meta name="theme-color" content="#08090C" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Niramit:wght@400;500;600;700&display=swap"
+    />
+
+    <!-- iOS: ต้อง Add to Home Screen ก่อนถึงจะขอสิทธิ์ push ได้ (สเปก §6) -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Spare" />
+    <link rel="apple-touch-icon" href="icon-180.png" />
+
+    <!-- หน้าเปิดของ iOS ต้องมีไฟล์ที่ขนาดตรงกับเครื่องเป๊ะ ๆ ไม่งั้น Safari ไม่ใช้เลย
+         สร้างด้วย `npm run icons` แล้วก๊อปจาก public/startup-links.html -->
+    <link rel="apple-touch-startup-image" href="splash-750x1334.png"
+      media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="splash-828x1792.png"
+      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="splash-1125x2436.png"
+      media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="splash-1170x2532.png"
+      media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="splash-1179x2556.png"
+      media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="splash-1206x2622.png"
+      media="(device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="splash-1242x2688.png"
+      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="splash-1284x2778.png"
+      media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="splash-1290x2796.png"
+      media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="splash-1320x2868.png"
+      media="(device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <title>Spare</title>
+
+    <style>
+      /* ทาสีพื้นตั้งแต่ก่อนบันเดิล CSS จะโหลดเสร็จ ไม่งั้นจะเห็นจอขาววาบหนึ่ง
+         ตอนเปิดจากไอคอนหน้าจอโฮม ซึ่งเห็นชัดมากบนพื้นดำ */
+      html, body { margin: 0; background: #08090C; }
+      @media (prefers-color-scheme: light) { html, body { background: #F4F4F1; } }
+      html[data-theme='light'], html[data-theme='light'] body { background: #F4F4F1; }
+      html[data-theme='dark'], html[data-theme='dark'] body { background: #08090C; }
+    </style>
+
+    <script>
+      /* อ่านโหมดที่ผู้ใช้เลือกไว้ก่อนหน้าจะ render ไม่งั้นคนที่ตั้งเป็น "สว่าง"
+         บนเครื่องที่ตั้งเป็นมืด จะเห็นจอดำวาบทุกครั้งที่เปิดแอป
+         ต้องเป็น inline script ตรงนี้เท่านั้น โมดูลโหลดช้าเกินไป */
+      try {
+        var m = localStorage.getItem('mf:mode');
+        if (m === 'light' || m === 'dark') document.documentElement.setAttribute('data-theme', m);
+      } catch (e) { /* โหมดส่วนตัวอ่านไม่ได้ ใช้ค่าตามระบบไป */ }
+    </script>
+    <script type="module" crossorigin src="./index-Dk165oAu.js"></script>
+    <link rel="stylesheet" crossorigin href="./index-B9mnLmea.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
