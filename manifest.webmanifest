@@ -28,5 +28,55 @@
       "type": "image/png",
       "purpose": "maskable"
     }
+  ],
+  "shortcuts": [
+    {
+      "name": "จดรายจ่าย",
+      "short_name": "จดรายจ่าย",
+      "url": "./?go=add",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "จดรายรับ",
+      "short_name": "จดรายรับ",
+      "url": "./?go=income",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "เป้าหมายเก็บเงิน",
+      "short_name": "เป้าหมาย",
+      "url": "./?go=goals",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "หนี้และยอดผ่อน",
+      "short_name": "หนี้",
+      "url": "./?go=debts",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
   ]
 }
